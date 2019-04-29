@@ -8,6 +8,7 @@ K=0.1;
 wn=561;
 zi=0.5;
 
+
 s=tf('s');
 
 
@@ -30,6 +31,7 @@ clc; clear all; close all;
 
 k = 10;
 m = 31.8 * 10^(-6); % Calculada desde Wn y k
+% B = 0.47;
 B = 0.01783; % el del problema seria 0.47
 
 s=tf('s');
