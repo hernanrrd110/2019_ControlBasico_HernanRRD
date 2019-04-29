@@ -1,0 +1,40 @@
+clc;
+Mp = 0.5; 
+K = 9*(pi^2 + (log(Mp))^2)/(16*(log(Mp))^2) - 1/2
+K = 11.6175
+wn = sqrt((1+2*K)/2)
+zita = 3/sqrt(8*(1+2*K))
+syms s;
+g = (2*K/(2*s^2+3*s+(1+2*K)));
+M = (10*0.0001)
+escalon = simplify(ilaplace(g*M/s))
+impulso = simplify(ilaplace(g*M))
+K_g = K/wn^2
+K_g*M
+
+clear s;
+s = tf('s');
+g = (2*K/(2*s^2+3*s+(1+2*K)));
+step(M*g);
+% impulse(M*g);
+
+%%
+clear all; close all; clc;
+
+K=0.36;
+a = 0.0116;
+b = 0.0181;
+c = -1;
+T = sqrt(a);
+wn = 1/T;
+zi=b/(2*T);
+
+s=tf('s');
+
+
+g=K/(a*s^2+b*s+c);
+
+
+polos=pole(g)
+
+step(g)
