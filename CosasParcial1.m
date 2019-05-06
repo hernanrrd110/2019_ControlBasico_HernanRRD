@@ -7,7 +7,7 @@ zita = 3/sqrt(8*(1+2*K))
 syms s;
 g = (2*K/(2*s^2+3*s+(1+2*K)));
 M = (10*0.0001)
-escalon = simplify(ilaplace(g*M/s))
+% escalon = minreal(ilaplace(g*M/s))
 impulso = simplify(ilaplace(g*M))
 K_g = K/wn^2
 K_g*M
