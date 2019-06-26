@@ -5,7 +5,7 @@ s = tf('s');
 
 % Planta del sistema
 g = 8/(s+1)^3;
-% margin(g); 
+ margin(g); 
 % Pide error de posicion menor al 5 porciento y Mf de 40 grados
 %Los margenes son casi cero, por loq ue la respuesta va a oscilar y no va a
 %cumplir con los margenes de diseño
@@ -30,7 +30,7 @@ s = tf('s');
 
 % Planta del sistema
 g = 8/(s+1)^3;
-% margin(g); 
+margin(g); 
 
 G_bc = feedback(g,1);
 figure();
@@ -45,8 +45,8 @@ G_PI  = ki/(Ti*s)*(Ti*s+1);
 margin(G_PI*g);
 G_bc2 = feedback(G_PI*g,1);
 
-figure;
-step(G_bc2);
+% figure;
+% step(G_bc2);
 
 %% Regulador PD Parte b del problema
 clear all; close all; clc;
